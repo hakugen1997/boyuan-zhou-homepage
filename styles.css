@@ -387,6 +387,10 @@ h1 {
   aspect-ratio: 16 / 9;
 }
 
+.landscape-gallery img {
+  aspect-ratio: 3 / 2;
+}
+
 .single-photo-grid {
   max-width: 760px;
 }
