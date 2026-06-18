@@ -372,6 +372,14 @@ h1 {
   object-fit: cover;
 }
 
+.photo-grid .wide-photo {
+  grid-column: 1 / -1;
+}
+
+.photo-grid .wide-photo img {
+  aspect-ratio: 16 / 9;
+}
+
 .photo-grid figcaption {
   padding: 12px 14px;
   color: var(--muted);
