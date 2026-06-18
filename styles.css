@@ -188,6 +188,7 @@ h1 {
   min-height: min(62vw, 620px);
   display: block;
   object-fit: cover;
+  object-position: 56% 34%;
 }
 
 .intro-band,
