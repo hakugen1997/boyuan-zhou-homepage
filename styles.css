@@ -40,6 +40,13 @@ a {
   text-underline-offset: 3px;
 }
 
+.inline-title-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -378,6 +385,10 @@ h1 {
 
 .photo-grid .wide-photo img {
   aspect-ratio: 16 / 9;
+}
+
+.single-photo-grid {
+  max-width: 760px;
 }
 
 .photo-grid figcaption {
