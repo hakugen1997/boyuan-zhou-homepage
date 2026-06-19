@@ -625,6 +625,53 @@ dd {
   color: var(--burgundy);
 }
 
+.compact-list {
+  margin-top: 12px;
+}
+
+.foldout {
+  margin-top: 14px;
+  border-top: 1px solid rgba(216, 216, 207, 0.8);
+}
+
+.foldout summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0 0;
+  color: var(--green);
+  cursor: pointer;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  list-style: none;
+}
+
+.foldout summary::-webkit-details-marker {
+  display: none;
+}
+
+.foldout summary::after {
+  content: "+";
+  display: inline-grid;
+  width: 22px;
+  height: 22px;
+  place-items: center;
+  border: 1px solid rgba(53, 95, 80, 0.35);
+  border-radius: 50%;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.foldout[open] summary::after {
+  content: "-";
+}
+
+.foldout-list {
+  margin-top: 8px;
+}
+
 .experience-group {
   padding: 24px 0;
   border-top: 1px solid var(--line);
