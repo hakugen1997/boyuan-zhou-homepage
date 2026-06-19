@@ -8,7 +8,7 @@
       name="description"
       content="Academic homepage and CV for Boyuan Zhou, 周 伯源, athletic trainer and strength & conditioning coach."
     />
-    <link rel="stylesheet" href="styles.css?v=20260619-1" />
+    <link rel="stylesheet" href="styles.css?v=20260619-2" />
   </head>
   <body>
     <header class="site-header" aria-label="Main navigation">
@@ -46,40 +46,74 @@
         </figure>
       </section>
 
-      <section class="intro-band" id="profile">
+      <section class="intro-band about-band" id="profile">
         <div class="section-label">About me</div>
-        <div>
-          <h2>Academic homepage and professional CV</h2>
-          <p>
-            I am a doctoral student in the Sport Medicine Degree Program at the University of
-            Tsukuba, supervised by
-            <a class="text-link" href="https://trios.tsukuba.ac.jp/en/researcher/0000002378">Dr. Takashi Fukuda</a>.
-            I completed my undergraduate studies in Japanese at Beijing International Studies
-            University, where I began playing American football. The university was among the first
-            in China to establish an American football team. Repeated injuries during training
-            eventually led me to retire from competition, and that experience became the starting
-            point of my interest in sport medicine, physical therapy, and athlete support. I later
-            studied at Hiroshima University and completed my bachelor's thesis there before entering
-            the University of Tsukuba, one of Japan's leading institutions in sport science and sport
-            medicine. I earned my master's degree in Physical Education, Health and Sport Sciences at
-            the University of Tsukuba, continued under Dr. Fukuda's supervision, and became a
-            certified athletic trainer during my master's program.
-          </p>
-          <p>
-            My research focuses on athlete monitoring, training load, injury prevention, fatigue
-            prediction, and strength training. In my doctoral program, I collaborate with
-            <a class="text-link" href="https://trios.tsukuba.ac.jp/en/researcher/0000003188">Dr. Shinichi Yamagiwa</a>,
-            whose expertise is in computer science. Together, we use machine learning to analyze the
-            characteristics of training load in American football players and to estimate athlete
-            fatigue by integrating external and internal load indices.
-          </p>
-          <p>
-            As an athletic trainer and strength and conditioning coach, I have worked with athletes
-            from childhood and youth sport to collegiate and professional levels. I am especially
-            interested in teaching training as a practical tool for helping athletes return to and
-            sustain performance. I also use Japanese shiatsu and Chinese tuina as recovery methods
-            to support athletes dealing with fatigue and accumulated training stress.
-          </p>
+        <div class="about-layout">
+          <div class="about-media about-media-left" aria-label="Athletic trainer field photos">
+            <figure class="about-photo reveal-on-scroll">
+              <img
+                src="assets/about-sideline.jpg"
+                alt="Boyuan Zhou observing American football practice from the sideline"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="about-photo reveal-on-scroll">
+              <img
+                src="assets/about-player.jpg"
+                alt="Boyuan Zhou playing American football during his undergraduate years"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+          <div class="about-copy">
+            <h2>Academic homepage and professional CV</h2>
+            <p>
+              I am a doctoral student in the Sport Medicine Degree Program at the University of
+              Tsukuba, supervised by
+              <a class="text-link" href="https://trios.tsukuba.ac.jp/en/researcher/0000002378">Dr. Takashi Fukuda</a>.
+              I completed my undergraduate studies in Japanese at Beijing International Studies
+              University, where I began playing American football. The university was among the first
+              in China to establish an American football team. Repeated injuries during training
+              eventually led me to retire from competition, and that experience became the starting
+              point of my interest in sport medicine, physical therapy, and athlete support. I later
+              studied at Hiroshima University and completed my bachelor's thesis there before entering
+              the University of Tsukuba, one of Japan's leading institutions in sport science and sport
+              medicine. I earned my master's degree in Physical Education, Health and Sport Sciences at
+              the University of Tsukuba, continued under Dr. Fukuda's supervision, and became a
+              certified athletic trainer during my master's program.
+            </p>
+            <p>
+              My research focuses on athlete monitoring, training load, injury prevention, fatigue
+              prediction, and strength training. In my doctoral program, I collaborate with
+              <a class="text-link" href="https://trios.tsukuba.ac.jp/en/researcher/0000003188">Dr. Shinichi Yamagiwa</a>,
+              whose expertise is in computer science. Together, we use machine learning to analyze the
+              characteristics of training load in American football players and to estimate athlete
+              fatigue by integrating external and internal load indices.
+            </p>
+            <p>
+              As an athletic trainer and strength and conditioning coach, I have worked with athletes
+              from childhood and youth sport to collegiate and professional levels. I am especially
+              interested in teaching training as a practical tool for helping athletes return to and
+              sustain performance. I also use Japanese shiatsu and Chinese tuina as recovery methods
+              to support athletes dealing with fatigue and accumulated training stress.
+            </p>
+          </div>
+          <div class="about-media about-media-right" aria-label="Athletic training support photos">
+            <figure class="about-photo reveal-on-scroll">
+              <img
+                src="assets/about-athletic-training.jpg"
+                alt="Boyuan Zhou supporting an injured American football athlete"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="about-photo reveal-on-scroll">
+              <img
+                src="assets/about-treatment.jpg"
+                alt="Boyuan Zhou providing athletic training support on the field"
+                loading="lazy"
+              />
+            </figure>
+          </div>
         </div>
       </section>
 
@@ -494,5 +528,26 @@
         <a class="button primary" href="mailto:hakugen1997@gmail.com">Email</a>
       </section>
     </main>
+    <script>
+      const revealItems = document.querySelectorAll(".reveal-on-scroll");
+
+      if ("IntersectionObserver" in window) {
+        const revealObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                revealObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.18 }
+        );
+
+        revealItems.forEach((item) => revealObserver.observe(item));
+      } else {
+        revealItems.forEach((item) => item.classList.add("is-visible"));
+      }
+    </script>
   </body>
 </html>
