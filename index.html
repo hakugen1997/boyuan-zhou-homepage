@@ -8,7 +8,7 @@
       name="description"
       content="Academic homepage and CV for Boyuan Zhou, 周 伯源, athletic trainer and strength & conditioning coach."
     />
-    <link rel="stylesheet" href="styles.css?v=20260619-3" />
+    <link rel="stylesheet" href="styles.css?v=20260619-4" />
   </head>
   <body>
     <header class="site-header" aria-label="Main navigation">
@@ -49,38 +49,34 @@
       <section class="intro-band about-band" id="profile">
         <div class="section-label">About me</div>
         <div class="about-layout">
-          <div class="about-media" aria-label="Athletic trainer and American football photos">
-            <figure class="about-photo reveal-on-scroll">
+          <div class="about-carousel" aria-label="Athletic trainer and American football photos">
+            <figure class="about-slide">
               <img
                 src="assets/about-sideline.jpg"
                 alt="Boyuan Zhou observing American football practice from the sideline"
                 loading="lazy"
               />
-              <figcaption>Sideline support with the University of Tsukuba Excaliburs.</figcaption>
             </figure>
-            <figure class="about-photo reveal-on-scroll">
+            <figure class="about-slide">
               <img
                 src="assets/about-player.jpg"
                 alt="Boyuan Zhou playing American football during his undergraduate years"
                 loading="lazy"
               />
-              <figcaption>American football playing experience during undergraduate study.</figcaption>
             </figure>
-            <figure class="about-photo reveal-on-scroll">
+            <figure class="about-slide">
               <img
                 src="assets/about-athletic-training.jpg"
                 alt="Boyuan Zhou supporting an injured American football athlete"
                 loading="lazy"
               />
-              <figcaption>On-field athletic training support during competition.</figcaption>
             </figure>
-            <figure class="about-photo reveal-on-scroll">
+            <figure class="about-slide">
               <img
                 src="assets/about-treatment.jpg"
                 alt="Boyuan Zhou providing athletic training support on the field"
                 loading="lazy"
               />
-              <figcaption>Recovery and treatment support for football athletes.</figcaption>
             </figure>
           </div>
           <div class="about-copy">
@@ -530,26 +526,5 @@
         <a class="button primary" href="mailto:hakugen1997@gmail.com">Email</a>
       </section>
     </main>
-    <script>
-      const revealItems = document.querySelectorAll(".reveal-on-scroll");
-
-      if ("IntersectionObserver" in window) {
-        const revealObserver = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("is-visible");
-                revealObserver.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.18 }
-        );
-
-        revealItems.forEach((item) => revealObserver.observe(item));
-      } else {
-        revealItems.forEach((item) => item.classList.add("is-visible"));
-      }
-    </script>
   </body>
 </html>
